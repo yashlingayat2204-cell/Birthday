@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Jiya 🎂</title>
+
+    <!-- ===================================================== -->
+    <!--                     GOOGLE FONT                        -->
+    <!-- ===================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+
+    <!-- ===================================================== -->
+    <!--                  CSS STARTS HERE                       -->
+    <!--  ALL CSS WILL BE ADDED INSIDE THIS STYLE TAG           -->
+    <!-- ===================================================== -->
+
+    <style>
+/* ===========================================================
+                RESET
+=========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#111827;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+
+
+/* ===========================================================
+                BACKGROUND
+=========================================================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    background:linear-gradient(
+        135deg,
+        #1e1b4b,
+        #312e81,
+        #6d28d9,
+        #ec4899
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 15s ease infinite;
+
+}
+
+
+
+/* ===========================================================
+                HEARTS
+=========================================================== */
+
+#hearts-container{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+}
+
+
+
+/* ===========================================================
+                BALLOONS
+=========================================================== */
+
+#balloons-container{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+
+/* ===========================================================
+                CONFETTI
+=========================================================== */
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:100;
+
+}
+
+
+
+/* ===========================================================
+                MAIN CONTAINER
+=========================================================== */
+
+#main-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+}
+
+
+
+/* ===========================================================
+                SCENES
+=========================================================== */
+
+.scene{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+    transition:.8s;
+
+}
+
+
+
+.scene.active{
+
+    display:flex;
+
+}
+
+
+
+/* ===========================================================
+                GLASS CARD
+=========================================================== */
+
+.glass-card{
+
+    width:min(700px,95%);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+
+        0 15px 40px rgba(0,0,0,.25);
+
+}
+
+
+
+/* ===========================================================
+                HEADINGS
+=========================================================== */
+
+h1{
+
+    font-size:3rem;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+h2{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+h3{
+
+    margin-top:40px;
+
+    text-align:center;
+
+}
+
+
+
+/* ===========================================================
+                PARAGRAPHS
+=========================================================== */
+
+p{
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+}
+
+
+
+/* ===========================================================
+                TERMINAL
+=========================================================== */
+
+.terminal{
+
+    width:min(850px,95%);
+
+    background:#090909;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 25px 70px rgba(0,0,0,.45);
+
+}
+
+
+
+/* ===========================================================
+                TERMINAL HEADER
+=========================================================== */
+
+.terminal-top{
+
+    background:#1f2937;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding-left:20px;
+
+}
+
+.red,
+.yellow,
+.green{
+
+    width:15px;
+
+    height:15px;
+
+    border-radius:50%;
+
+}
+
+.red{
+    background:#ff5f56;
+}
+
+.yellow{
+    background:#ffbd2e;
+}
+
+.green{
+    background:#27c93f;
+}
+
+
+
+/* ===========================================================
+                TERMINAL BODY
+=========================================================== */
+
+.terminal-body{
+
+    padding:30px;
+
+    min-height:420px;
+
+    overflow:auto;
+
+    font-family:'Fira Code',monospace;
+
+}
+
+
+
+/* ===========================================================
+                TERMINAL TEXT
+=========================================================== */
+
+#terminalText{
+
+    color:#6cff85;
+
+    font-size:17px;
+
+    white-space:pre-wrap;
+
+}
+
+
+
+/* ===========================================================
+                HIDDEN
+=========================================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ===========================================================
+                BUTTONS
+=========================================================== */
+
+button{
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff4fa3,#b832ff);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    display:block;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+    box-shadow:
+        0 10px 25px rgba(255,79,163,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 18px 35px rgba(255,79,163,.45);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+
+/* ===========================================================
+                LETTER
+=========================================================== */
+
+#letterText{
+
+    margin-top:20px;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+
+
+/* ===========================================================
+                WISHES
+=========================================================== */
+
+#wishContainer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.wishCard{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    transition:.35s;
+
+}
+
+.wishCard:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(255,255,255,.22);
+
+}
+
+.wishCard span{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+.wishCard p{
+
+    margin:0;
+
+}
+
+
+
+/* ===========================================================
+                FINAL CARD
+=========================================================== */
+
+.final-card{
+
+    text-align:center;
+
+}
+
+#finalMessage{
+
+    line-height:2;
+
+    margin-top:20px;
+
+}
+
+#signature{
+
+    margin-top:45px;
+
+    font-size:26px;
+
+}
+
+
+
+/* ===========================================================
+                SCROLLBAR
+=========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff4fa3;
+
+    border-radius:20px;
+
+}
+
+
+
+/* ===========================================================
+                FADE ANIMATION
+=========================================================== */
+
+.scene.active{
+
+    animation:fadeScene .8s ease;
+
+}
+
+@keyframes fadeScene{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* ===========================================================
+                GRADIENT BACKGROUND
+=========================================================== */
+
+@keyframes gradientMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+
+
+/* ===========================================================
+                MOBILE
+=========================================================== */
+
+@media(max-width:768px){
+
+    .glass-card{
+
+        padding:28px;
+
+    }
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    h2{
+
+        font-size:1.6rem;
+
+    }
+
+    p{
+
+        font-size:16px;
+
+    }
+
+    #terminalText{
+
+        font-size:15px;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+}
+
+/* ===========================================================
+                FLOATING HEARTS
+=========================================================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-60px;
+
+    font-size:22px;
+
+    animation:heartFloat linear forwards;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:3;
+
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.3));
+
+}
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg)
+            scale(.8);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(180deg)
+            scale(1);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-120vh)
+            translateX(-20px)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ===========================================================
+                FLOATING BALLOONS
+=========================================================== */
+
+.balloon{
+
+    position:fixed;
+
+    bottom:-180px;
+
+    font-size:50px;
+
+    animation:balloonFloat linear forwards;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:2;
+
+}
+
+@keyframes balloonFloat{
+
+    from{
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-55vh)
+            translateX(20px);
+
+    }
+
+    to{
+
+        transform:
+            translateY(-130vh)
+            translateX(-25px);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ===========================================================
+                SPARKLES
+=========================================================== */
+
+.sparkle{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px white;
+
+    animation:sparkleAnim 2.5s linear forwards;
+
+    pointer-events:none;
+
+    z-index:5;
+
+}
+
+@keyframes sparkleAnim{
+
+    from{
+
+        transform:scale(.2);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+            translateY(-120px)
+            scale(1.8);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ===========================================================
+                BUTTON GLOW
+=========================================================== */
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.35),
+
+            transparent
+
+        );
+
+    transition:.7s;
+
+}
+
+button:hover::before{
+
+    left:120%;
+
+}
+
+
+
+/* ===========================================================
+                CARD HOVER
+=========================================================== */
+
+.glass-card{
+
+    transition:.4s;
+
+}
+
+.glass-card:hover{
+
+    transform:
+
+        translateY(-5px)
+
+        scale(1.01);
+
+}
+
+
+
+/* ===========================================================
+                TERMINAL CURSOR
+=========================================================== */
+
+#terminalText::after{
+
+    content:"▋";
+
+    animation:cursorBlink 1s infinite;
+
+}
+
+@keyframes cursorBlink{
+
+    0%,50%{
+
+        opacity:1;
+
+    }
+
+    51%,100%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ===========================================================
+                POP ANIMATION
+=========================================================== */
+
+.pop{
+
+    animation:popAnimation .45s;
+
+}
+
+@keyframes popAnimation{
+
+    0%{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/* ===========================================================
+                HEART BEAT
+=========================================================== */
+
+.beat{
+
+    animation:beat 1.2s infinite;
+
+}
+
+@keyframes beat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    20%{
+
+        transform:scale(1.08);
+
+    }
+
+    40%{
+
+        transform:scale(.98);
+
+    }
+
+    60%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================================================
+        RIPPLE ANIMATION
+=========================================================== */
+
+@keyframes ripple{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            scale(0);
+
+        opacity:.8;
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            scale(15);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================================================
+        CARD ENTRANCE
+=========================================================== */
+
+.glass-card{
+
+    transition:
+
+        transform .7s,
+
+        opacity .7s,
+
+        box-shadow .4s;
+
+}
+
+/* ===========================================================
+        FINAL CARD GLOW
+=========================================================== */
+
+.final-card{
+
+    transition:
+
+        box-shadow 1s ease,
+
+        transform .5s;
+
+}
+
+
+
+/* ===========================================================
+        WISH CARD EFFECT
+=========================================================== */
+
+.wishCard{
+
+    transition:
+
+        transform .5s,
+
+        opacity .6s,
+
+        background .4s;
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- ========================================================= -->
+<!--                 ANIMATED BACKGROUND                        -->
+<!-- ========================================================= -->
+
+<div id="background"></div>
+
+
+
+<!-- ========================================================= -->
+<!--                  FLOATING HEARTS                           -->
+<!-- Hearts will be created automatically using JavaScript      -->
+<!-- ========================================================= -->
+
+<div id="hearts-container"></div>
+
+
+
+<!-- ========================================================= -->
+<!--                  FLOATING BALLOONS                         -->
+<!-- Balloons will also be created using JavaScript             -->
+<!-- ========================================================= -->
+
+<div id="balloons-container"></div>
+
+
+
+<!-- ========================================================= -->
+<!--                      CONFETTI                              -->
+<!-- ========================================================= -->
+
+<canvas id="confetti"></canvas>
+
+
+
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!--               MAIN WEBSITE CONTAINER                       -->
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+
+<div id="main-container">
+
+
+
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- SCENE 1 : TERMINAL INTRO                                  -->
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+
+<section class="scene active" id="scene1">
+
+    <div class="terminal">
+
+        <div class="terminal-top">
+
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+<pre id="terminalText">
+
+</pre>
+
+        </div>
+
+        <button id="startButton" class="hidden">
+
+            Start The Surprise ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- SCENE 2 : HAPPY BIRTHDAY                                  -->
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+
+<section class="scene" id="scene2">
+
+    <div class="glass-card">
+
+        <h1>
+
+            🎂 Happy Birthday 🎉
+
+        </h1>
+
+        <p id="birthdayIntro">
+
+            Birthday text will come here later.
+
+        </p>
+
+        <button class="nextButton" data-next="scene3">
+
+            Open Your First Gift 🎁
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- SCENE 3 : LETTER                                           -->
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+
+<section class="scene" id="scene3">
+
+    <div class="glass-card">
+
+        <h2>
+
+            💌 A Small Letter
+
+        </h2>
+
+        <div id="letterText">
+
+            Letter text will be added later.
+
+        </div>
+
+        <button class="nextButton" data-next="scene4">
+
+            Continue ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- SCENE 4 : BIRTHDAY WISHES                                 -->
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+
+<section class="scene" id="scene4">
+
+    <div class="glass-card">
+
+        <h2>
+
+            🌸 A Few Wishes
+
+        </h2>
+
+        <div id="wishContainer">
+
+        </div>
+
+        <button class="nextButton" data-next="scene5">
+
+            One Last Click ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- SCENE 5 : FINAL MESSAGE                                   -->
+<!-- ========================================================= -->
+<!-- ========================================================= -->
+
+<section class="scene" id="scene5">
+
+    <div class="glass-card final-card">
+
+        <h1>
+
+            Thank You 😊
+
+        </h1>
+
+        <p id="finalMessage">
+
+            Final message will come later.
+
+        </p>
+
+        <h3 id="signature">
+
+            — Your Name
+
+        </h3>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+</div>
+
+
+
+<!-- ========================================================= -->
+<!--                  JAVASCRIPT STARTS HERE                    -->
+<!-- ========================================================= -->
+
+<script>
+
+/* ===========================================================
+                    WEBSITE CONFIGURATION
+   Edit only this section later if you want to change text.
+=========================================================== */
+
+const CONFIG = {
+
+    friendName: "Jiya",
+
+    yourName: "Yash",
+
+    websiteTitle: "Happy Birthday Jiya 🎂",
+
+    birthdayHeading: "🎉 Happy Birthday 🎂",
+
+    birthdayIntro: `
+Today is all about celebrating you.
+
+I hope you're smiling already because this is just the beginning of a little surprise.
+`,
+
+
+
+    letter: `
+
+Hey,
+
+I was thinking about what to gift you.
+
+A normal birthday message felt too ordinary.
+
+Then I remembered...
+
+You once told me that I should make something using coding.
+
+So...
+
+Instead of buying another gift,
+
+I decided to make this little webpage.
+
+I hope it makes you smile.
+
+Happy Birthday.
+
+`,
+
+
+
+    wishes: [
+
+        "May your smile always stay the same 😊",
+
+        "May this year bring lots of happiness 🌸",
+
+        "May every dream slowly become reality ⭐",
+
+        "May you always have people who care about you ❤️",
+
+        "May your birthday be as wonderful as you are 🎂"
+
+    ],
+
+
+
+    finalMessage: `
+
+Thank you for taking a few minutes to go through this little surprise.
+
+Some people give greeting cards.
+
+Some people give gifts.
+
+Built specially for your birthday.
+
+I hope today brings you happiness, laughter, good health and lots of beautiful memories.
+
+Once again...
+
+Happy Birthday.
+
+`,
+
+};
+
+
+
+/* ===========================================================
+                CHANGE WEBSITE TITLE AUTOMATICALLY
+=========================================================== */
+
+document.title = CONFIG.websiteTitle;
+
+
+
+/* ===========================================================
+                INSERT TEXT INTO HTML
+=========================================================== */
+
+document.querySelector("#birthdayIntro").innerHTML = CONFIG.birthdayIntro;
+
+document.querySelector("#letterText").innerHTML = "";
+
+document.querySelector("#finalMessage").innerHTML =
+CONFIG.finalMessage.replace(/\n/g,"<br>");
+
+document.querySelector("#signature").innerHTML =
+"— " + CONFIG.yourName;
+
+
+
+/* ===========================================================
+                SHOW WISHES AUTOMATICALLY
+=========================================================== */
+
+const wishContainer =
+document.querySelector("#wishContainer");
+
+CONFIG.wishes.forEach((wish,index)=>{
+
+    const card=document.createElement("div");
+
+    card.className="wishCard";
+
+    card.innerHTML=`
+
+        <span>${index+1}.</span>
+
+        <p>${wish}</p>
+
+    `;
+
+    wishContainer.appendChild(card);
+
+});
+
+
+
+/* ===========================================================
+        EVERYTHING BELOW WILL COME IN NEXT PARTS
+=========================================================== */
+
+/* ===========================================================
+                SCENE NAVIGATION SYSTEM
+=========================================================== */
+
+const scenes = document.querySelectorAll(".scene");
+
+async function showScene(sceneId){
+
+    scenes.forEach(scene=>{
+
+        scene.classList.remove("active");
+
+    });
+
+    document.getElementById(sceneId)
+    .classList.add("active");
+
+
+    if(sceneId==="scene2"){
+
+        await showBirthdayIntro();
+
+    }
+
+    if(sceneId==="scene3"){
+
+        await showLetter();
+
+    }
+
+    if(sceneId==="scene4"){
+
+        animateWishCards();
+
+    }
+
+    if(sceneId==="scene5"){
+
+        await showFinalMessage();
+
+    }
+
+}
+
+/* ===========================================================
+                NEXT BUTTONS
+=========================================================== */
+
+
+
+
+/* ===========================================================
+                TERMINAL TYPING ANIMATION
+=========================================================== */
+
+const terminalLines = [
+
+"Initializing Birthday.exe...",
+
+"",
+
+"Loading Friendship.dll ............. OK",
+
+"Loading Good Wishes ................. OK",
+
+"Checking Today's Date ............... OK",
+
+"",
+
+"✔ Birthday Detected.",
+
+"",
+
+"Preparing a small surprise...",
+
+"",
+
+"Please wait...",
+
+"",
+
+"██████████████████████████ 100%",
+
+"",
+
+"Welcome 😊"
+
+];
+
+
+
+const terminalText =
+document.getElementById("terminalText");
+
+const startButton =
+document.getElementById("startButton");
+
+
+
+let lineIndex = 0;
+
+
+
+function typeTerminal(){
+
+    if(lineIndex < terminalLines.length){
+
+        terminalText.innerHTML += terminalLines[lineIndex] + "\n";
+
+        lineIndex++;
+
+        terminalText.scrollTop =
+        terminalText.scrollHeight;
+
+        setTimeout(typeTerminal,250);
+
+    }
+
+    else{
+
+        startButton.classList.remove("hidden");
+
+    }
+
+}
+
+
+
+window.onload = ()=>{
+
+    typeTerminal();
+
+};
+
+
+
+/* ===========================================================
+                START BUTTON
+=========================================================== */
+
+
+
+
+
+/* ===========================================================
+                WISH CARD ANIMATION
+=========================================================== */
+
+const wishCards =
+document.querySelectorAll(".wishCard");
+
+wishCards.forEach((card,index)=>{
+
+    card.style.animationDelay =
+    (index*0.3)+"s";
+
+});
+
+
+
+/* ===========================================================
+        HELPER FUNCTION
+=========================================================== */
+
+function sleep(ms){
+
+    return new Promise(resolve=>{
+
+        setTimeout(resolve,ms);
+
+    });
+
+}
+
+
+
+/* ===========================================================
+        MORE FUNCTIONS WILL COME LATER
+=========================================================== */
+
+
+/* ===========================================================
+        PART 4B-1 : FLOATING HEARTS & BALLOONS
+=========================================================== */
+
+const heartsContainer = document.getElementById("hearts-container");
+const balloonsContainer = document.getElementById("balloons-container");
+
+/* -----------------------------------------------------------
+                    CREATE HEART
+------------------------------------------------------------*/
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["💖","💗","💕","💝","❤️"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+        (18 + Math.random()*20) + "px";
+
+    heart.style.animationDuration =
+        (6 + Math.random()*4) + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },11000);
+
+}
+
+/* -----------------------------------------------------------
+                CREATE BALLOON
+------------------------------------------------------------*/
+
+function createBalloon(){
+
+    const balloon = document.createElement("div");
+
+    balloon.className = "balloon";
+
+    const balloons = ["🎈","🎈","🎈","🎈"];
+
+    balloon.innerHTML =
+        balloons[Math.floor(Math.random()*balloons.length)];
+
+    balloon.style.left =
+        Math.random()*100 + "vw";
+
+    balloon.style.animationDuration =
+        (8 + Math.random()*5) + "s";
+
+    balloonsContainer.appendChild(balloon);
+
+    setTimeout(()=>{
+
+        balloon.remove();
+
+    },15000);
+
+}
+
+/* -----------------------------------------------------------
+            START ANIMATIONS AFTER START BUTTON
+------------------------------------------------------------*/
+
+function startFloatingAnimation(){
+
+    setInterval(createHeart,1600);
+
+    setInterval(createBalloon,4200);
+
+}
+
+/* -----------------------------------------------------------
+        MODIFY START BUTTON CLICK
+------------------------------------------------------------*/
+
+startButton.addEventListener("click",()=>{
+
+    startFloatingAnimation();
+
+});
+
+startButton.addEventListener("click",()=>{
+    startFloatingAnimation();
+});
+
+/* -----------------------------------------------------------
+            SMALL POP EFFECT ON BUTTONS
+------------------------------------------------------------*/
+
+document.querySelectorAll("button").forEach(btn=>{
+
+    btn.addEventListener("mouseenter",()=>{
+
+        btn.classList.add("pop");
+
+        setTimeout(()=>{
+
+            btn.classList.remove("pop");
+
+        },450);
+
+    });
+
+});
+
+/* -----------------------------------------------------------
+        FINAL PAGE EXTRA HEARTS
+------------------------------------------------------------*/
+
+document
+.getElementById("scene5")
+.addEventListener("click",()=>{
+
+    for(let i=0;i<15;i++){
+
+        setTimeout(createHeart,i*120);
+
+    }
+
+});
+
+/* ===========================================================
+        PART 4B-1 COMPLETE
+=========================================================== */
+
+/* ===========================================================
+        PART 4B-2 : SPARKLES + SIMPLE CONFETTI
+=========================================================== */
+
+const confettiCanvas = document.getElementById("confetti");
+const ctx = confettiCanvas.getContext("2d");
+
+let confetti = [];
+
+/* ===========================================================
+                CANVAS SIZE
+=========================================================== */
+
+function resizeCanvas(){
+
+    confettiCanvas.width = window.innerWidth;
+    confettiCanvas.height = window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener("resize",resizeCanvas);
+
+
+/* ===========================================================
+                CREATE SPARKLE
+=========================================================== */
+
+function createSparkle(x,y){
+
+    const sparkle=document.createElement("div");
+
+    sparkle.className="sparkle";
+
+    sparkle.style.left=x+"px";
+
+    sparkle.style.top=y+"px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(()=>{
+
+        sparkle.remove();
+
+    },2500);
+
+}
+
+
+/* ===========================================================
+        SPARKLES WHEN BUTTON IS CLICKED
+=========================================================== */
+
+document.querySelectorAll("button").forEach(button=>{
+
+    button.addEventListener("click",(e)=>{
+
+        const rect=button.getBoundingClientRect();
+
+        for(let i=0;i<12;i++){
+
+            setTimeout(()=>{
+
+                createSparkle(
+
+                    rect.left+Math.random()*rect.width,
+
+                    rect.top+Math.random()*rect.height
+
+                );
+
+            },i*40);
+
+        }
+
+    });
+
+});
+
+
+/* ===========================================================
+                CONFETTI PARTICLE
+=========================================================== */
+
+function ConfettiPiece(){
+
+    this.x=Math.random()*confettiCanvas.width;
+
+    this.y=-20;
+
+    this.size=6+Math.random()*8;
+
+    this.speed=2+Math.random()*5;
+
+    this.angle=Math.random()*360;
+
+    this.rotate=Math.random()*8;
+
+    const colors=[
+
+        "#ff4fa3",
+
+        "#ffd93d",
+
+        "#7c4dff",
+
+        "#4ade80",
+
+        "#38bdf8",
+
+        "#ffffff"
+
+    ];
+
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+
+}
+
+ConfettiPiece.prototype.update=function(){
+
+    this.y+=this.speed;
+
+    this.angle+=this.rotate;
+
+};
+
+ConfettiPiece.prototype.draw=function(){
+
+    ctx.save();
+
+    ctx.translate(this.x,this.y);
+
+    ctx.rotate(this.angle*Math.PI/180);
+
+    ctx.fillStyle=this.color;
+
+    ctx.fillRect(
+
+        -this.size/2,
+
+        -this.size/2,
+
+        this.size,
+
+        this.size
+
+    );
+
+    ctx.restore();
+
+};
+
+
+/* ===========================================================
+                START CONFETTI
+=========================================================== */
+
+function launchConfetti(){
+
+    for(let i=0;i<90;i++){
+
+        confetti.push(new ConfettiPiece());
+
+    }
+
+}
+
+
+/* ===========================================================
+                ANIMATION LOOP
+=========================================================== */
+
+function animateConfetti(){
+
+    ctx.clearRect(
+
+        0,
+
+        0,
+
+        confettiCanvas.width,
+
+        confettiCanvas.height
+
+    );
+
+    confetti.forEach((piece,index)=>{
+
+        piece.update();
+
+        piece.draw();
+
+        if(piece.y>
+
+            confettiCanvas.height+30){
+
+            confetti.splice(index,1);
+
+        }
+
+    });
+
+    requestAnimationFrame(animateConfetti);
+
+}
+
+animateConfetti();
+
+
+/* ===========================================================
+        CONFETTI ON FINAL PAGE
+=========================================================== */
+
+const finalButton =
+
+document.querySelector(
+
+'[data-next="scene5"]'
+
+);
+
+if(finalButton){
+
+finalButton.addEventListener(
+
+"click",
+
+()=>{
+
+    launchConfetti();
+
+}
+
+);
+
+}
+
+/* ===========================================================
+                END OF PART 4B-2
+=========================================================== */
+
+/* ===========================================================
+        PART 5A : TYPEWRITER ENGINE
+=========================================================== */
+
+let typing = false;
+
+/* -----------------------------------------------------------
+        Generic Typewriter Function
+------------------------------------------------------------*/
+
+async function typeWriter(element, text, speed = 35){
+
+    if(typing) return;
+
+    typing = true;
+
+    element.innerHTML = "";
+
+    for(let i = 0; i < text.length; i++){
+
+        const char = text[i];
+
+        if(char === "\n"){
+
+            element.innerHTML += "<br>";
+
+        }
+        else{
+
+            element.innerHTML += char;
+
+        }
+
+        await sleep(speed);
+
+    }
+
+    typing = false;
+
+}
+
+
+/* -----------------------------------------------------------
+        Type Birthday Intro
+------------------------------------------------------------*/
+
+async function showBirthdayIntro(){
+
+    const box =
+        document.getElementById("birthdayIntro");
+
+    await typeWriter(
+
+        box,
+
+        CONFIG.birthdayIntro,
+
+        28
+
+    );
+
+}
+
+
+/* -----------------------------------------------------------
+        Type Letter
+------------------------------------------------------------*/
+
+async function showLetter(){
+
+    const box =
+        document.getElementById("letterText");
+
+    await typeWriter(
+
+        box,
+
+        CONFIG.letter,
+
+        22
+
+    );
+
+}
+
+
+/* -----------------------------------------------------------
+        Type Final Message
+------------------------------------------------------------*/
+
+async function showFinalMessage(){
+
+    const box =
+        document.getElementById("finalMessage");
+
+    await typeWriter(
+
+        box,
+
+        CONFIG.finalMessage,
+
+        26
+
+    );
+
+}
+
+
+
+/* ===========================================================
+        Wish Animation
+=========================================================== */
+
+function animateWishCards(){
+
+    const cards =
+        document.querySelectorAll(".wishCard");
+
+    cards.forEach((card,index)=>{
+
+        card.style.opacity="0";
+
+        card.style.transform="translateY(30px)";
+
+        setTimeout(()=>{
+
+            card.style.transition=".6s";
+
+            card.style.opacity="1";
+
+            card.style.transform="translateY(0)";
+
+        },index*350);
+
+    });
+
+}
+
+
+
+/* ===========================================================
+        End Part 5A
+=========================================================== */
+
+/* ===========================================================
+        PART 5B : CLICK EFFECTS & PAGE CELEBRATIONS
+=========================================================== */
+
+/* -----------------------------------------------------------
+        Heart Burst
+------------------------------------------------------------*/
+
+function burstHearts(count = 12){
+
+    for(let i=0;i<count;i++){
+
+        setTimeout(()=>{
+
+            createHeart();
+
+        },i*120);
+
+    }
+
+}
+
+/* -----------------------------------------------------------
+        Balloon Burst
+------------------------------------------------------------*/
+
+function balloonBurst(count = 4){
+
+    for(let i=0;i<count;i++){
+
+        setTimeout(()=>{
+
+            createBalloon();
+
+        },i*400);
+
+    }
+
+}
+
+/* -----------------------------------------------------------
+        Sparkle Explosion
+------------------------------------------------------------*/
+
+function sparkleBurst(x,y){
+
+    for(let i=0;i<20;i++){
+
+        setTimeout(()=>{
+
+            createSparkle(
+
+                x+(Math.random()*120-60),
+
+                y+(Math.random()*120-60)
+
+            );
+
+        },i*20);
+
+    }
+
+}
+
+/* -----------------------------------------------------------
+        Ripple Effect
+------------------------------------------------------------*/
+
+function createRipple(button,e){
+
+    const ripple=document.createElement("span");
+
+    ripple.style.position="absolute";
+
+    ripple.style.width="20px";
+
+    ripple.style.height="20px";
+
+    ripple.style.borderRadius="50%";
+
+    ripple.style.background="rgba(255,255,255,.5)";
+
+    ripple.style.pointerEvents="none";
+
+    ripple.style.transform="translate(-50%,-50%)";
+
+    ripple.style.left=e.offsetX+"px";
+
+    ripple.style.top=e.offsetY+"px";
+
+    ripple.style.animation="ripple .8s linear";
+
+    button.appendChild(ripple);
+
+    setTimeout(()=>{
+
+        ripple.remove();
+
+    },800);
+
+}
+
+/* -----------------------------------------------------------
+        Button Click Animation
+------------------------------------------------------------*/
+
+document.querySelectorAll("button").forEach(btn=>{
+
+    btn.addEventListener("click",(e)=>{
+
+        createRipple(btn,e);
+
+        burstHearts(8);
+
+        sparkleBurst(
+
+            e.clientX,
+
+            e.clientY
+
+        );
+
+    });
+
+});
+
+/* -----------------------------------------------------------
+        Celebrate When Scene Opens
+------------------------------------------------------------*/
+
+const oldShowScene = showScene;
+
+showScene = async function(sceneId){
+
+    await oldShowScene(sceneId);
+
+    if(sceneId==="scene2"){
+
+        balloonBurst(5);
+
+        burstHearts(10);
+
+    }
+
+    if(sceneId==="scene3"){
+
+        burstHearts(8);
+
+    }
+
+    if(sceneId==="scene4"){
+
+        balloonBurst(3);
+
+    }
+
+    if(sceneId==="scene5"){
+
+        burstHearts(20);
+
+        balloonBurst(8);
+
+        launchConfetti();
+
+    }
+
+};
+
+/* ===========================================================
+        PART 5C : CENTRAL EVENT CONTROLLER
+=========================================================== */
+
+/* -----------------------------------------------------------
+        Start Button
+------------------------------------------------------------*/
+
+startButton.onclick = async ()=>{
+
+    startFloatingAnimation();
+
+    await showScene("scene2");
+
+};
+
+/* -----------------------------------------------------------
+        Next Buttons
+------------------------------------------------------------*/
+
+document.querySelectorAll(".nextButton").forEach(button=>{
+
+    button.onclick = async ()=>{
+
+        const nextScene = button.dataset.next;
+
+        await showScene(nextScene);
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    };
+
+});
+
+
+/* -----------------------------------------------------------
+        Scene Entrance Animation
+------------------------------------------------------------*/
+
+document.querySelectorAll(".glass-card").forEach(card=>{
+
+    card.style.opacity="0";
+
+    card.style.transform="translateY(40px)";
+
+});
+
+
+function animateCurrentScene(sceneId){
+
+    const card=document.querySelector(
+
+        "#" + sceneId + " .glass-card"
+
+    );
+
+    if(!card) return;
+
+    card.style.opacity="0";
+
+    card.style.transform="translateY(35px)";
+
+    setTimeout(()=>{
+
+        card.style.transition=".7s";
+
+        card.style.opacity="1";
+
+        card.style.transform="translateY(0px)";
+
+    },100);
+
+}
+
+
+/* -----------------------------------------------------------
+        Replace showScene Again
+------------------------------------------------------------*/
+
+const previousShowScene = showScene;
+
+showScene = async function(sceneId){
+
+    await previousShowScene(sceneId);
+
+    animateCurrentScene(sceneId);
+
+};
+
+
+/* ===========================================================
+        END PART 5C
+=========================================================== */
+
+/* ===========================================================
+        END OF PART 5B
+=========================================================== */
+
+/* ===========================================================
+        PART 6A : BETTER ANIMATIONS
+=========================================================== */
+
+let wishesAnimated = false;
+
+/* -----------------------------------------------------------
+        Better Wish Animation
+------------------------------------------------------------*/
+
+function animateWishCardsOnce(){
+
+    if(wishesAnimated) return;
+
+    wishesAnimated = true;
+
+    const cards = document.querySelectorAll(".wishCard");
+
+    cards.forEach((card,index)=>{
+
+        card.style.opacity="0";
+
+        card.style.transform="translateY(50px)";
+
+        card.style.transition=".7s";
+
+        setTimeout(()=>{
+
+            card.style.opacity="1";
+
+            card.style.transform="translateY(0px)";
+
+        },index*350);
+
+    });
+
+}
+
+
+/* -----------------------------------------------------------
+        Glow Final Card
+------------------------------------------------------------*/
+
+function glowFinalCard(){
+
+    const card=document.querySelector(".final-card");
+
+    if(!card) return;
+
+    let glow=true;
+
+    setInterval(()=>{
+
+        if(glow){
+
+            card.style.boxShadow=
+
+            "0 0 40px rgba(255,255,255,.25),0 0 80px rgba(255,79,163,.35)";
+
+        }
+
+        else{
+
+            card.style.boxShadow=
+
+            "0 15px 40px rgba(0,0,0,.25)";
+
+        }
+
+        glow=!glow;
+
+    },1200);
+
+}
+
+
+/* -----------------------------------------------------------
+        Update Scene Function
+------------------------------------------------------------*/
+
+const oldSceneController = showScene;
+
+showScene = async function(sceneId){
+
+    await oldSceneController(sceneId);
+
+    if(sceneId==="scene4"){
+
+        animateWishCardsOnce();
+
+    }
+
+    if(sceneId==="scene5"){
+
+        glowFinalCard();
+
+    }
+
+};
+
+
+/* ===========================================================
+        Floating Stars
+=========================================================== */
+
+function createStar(){
+
+    const star=document.createElement("div");
+
+    star.innerHTML="✨";
+
+    star.style.position="fixed";
+
+    star.style.left=Math.random()*100+"vw";
+
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.fontSize=(10+Math.random()*18)+"px";
+
+    star.style.pointerEvents="none";
+
+    star.style.opacity=".9";
+
+    star.style.transition="3s";
+
+    document.body.appendChild(star);
+
+    setTimeout(()=>{
+
+        star.style.opacity="0";
+
+        star.style.transform="translateY(-40px)";
+
+    },100);
+
+    setTimeout(()=>{
+
+        star.remove();
+
+    },3200);
+
+}
+
+
+setInterval(createStar,3500);
+
+
+/* ===========================================================
+        END PART 6A
+=========================================================== */
+
+</script>
+
+</body>
+
+</html>
